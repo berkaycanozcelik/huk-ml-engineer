@@ -1,0 +1,22 @@
+# Ignore TensorFlow/Keras model weight files
+*.h5
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# Logs and local environment files
+*.log
+*.env
