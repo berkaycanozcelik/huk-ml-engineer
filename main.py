@@ -3,8 +3,7 @@ from model.model import SentimentModel, InputData
 
 app = FastAPI()
 
-
-model = SentimentModel("model/weights_final.h5")
+model = SentimentModel("huk-data/model.h5", "huk-data/weights_final.h5")
 
 
 @app.get("/")
