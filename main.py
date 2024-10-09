@@ -1,17 +1,13 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-
-from sentiment_model import SentimentModel
+from model.model import SentimentModel
 
 
-class InputData(BaseModel):
-    text: str
 
 
 app = FastAPI()
 
 
-model = SentimentModel("weights_final.h5")
+model = SentimentModel("model/weights_final.h5")
 
 
 @app.get("/")
@@ -19,7 +15,16 @@ async def root():
     return {"message": "Hello HUK"}
 
 
-@app.post("/predict/")
-def get_prediction(data: InputData):
+@app.post("/predict/", response_model=dict)
+def get_prediction(data: InputData) -> dict:
+    """
+    Predict sentiment from input text.
+
+    Args:
+        data (InputData): Input data containing the text to analyze.
+
+    Returns:
+        dict: A dictionary containing the prediction result.
+    """
     prediction = model.predict(data.text)
     return {"prediction": prediction}

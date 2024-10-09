@@ -1,4 +1,13 @@
 import tensorflow as tf
+from pydantic import BaseModel
+
+
+class InputData(BaseModel):
+    text: str
+
+#TODO: still on research
+class OutputData(BaseModel):
+    text: str
 
 
 class SentimentModel:
