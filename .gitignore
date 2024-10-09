@@ -1,6 +1,5 @@
 # Ignore TensorFlow/Keras model weight files
-*.h5
-*.ipynb
+huk-data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
