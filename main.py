@@ -1,8 +1,5 @@
 from fastapi import FastAPI
-from model.model import SentimentModel
-
-
-
+from model.model import SentimentModel, InputData
 
 app = FastAPI()
 
