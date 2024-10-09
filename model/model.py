@@ -5,10 +5,6 @@ from pydantic import BaseModel
 class InputData(BaseModel):
     text: str
 
-#TODO: still on research
-class OutputData(BaseModel):
-    text: str
-
 
 class SentimentModel:
     def __init__(self, weights_path: str):
