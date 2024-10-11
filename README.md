@@ -5,3 +5,4 @@ This repository demonstrates the deployment of a sentiment analysis model from K
 ## Features
 - **FastAPI Web Service**: Provides an API for model inference.
 - **Object-Oriented Design**: Model inference encapsulated in a Python class.
+- - **Dockerization**: The solution is containerized with Docker for easy deployment.
