@@ -1,5 +1,7 @@
 # TensorFlow for the sentiment model (pre-installed with tensorflow/tensorflow:2.7.0 Docker image)
-fastapi==0.78.0             # FastAPI for building the web API
-uvicorn==0.17.0             # Uvicorn for running the FastAPI server
-pydantic==1.10.2            # Data validation using Pydantic (v1.x, compatible with FastAPI 0.78.0)
-pytest==7.4.2               # Pytest for running unit and integration tests
+fastapi==0.78.0       # This should work fine with these dependencies
+uvicorn==0.17.0       # A stable version of uvicorn
+anyio==3.5.0          # Compatible with FastAPI and uvicorn
+starlette==0.19.1     # Ensures compatibility with FastAPI and anyio
+pydantic==1.10.2      # Your data validation library
+pytest==7.4.2         # For running tests
