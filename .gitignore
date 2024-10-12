@@ -1,7 +1,7 @@
-# Ignore TensorFlow/Keras model weight files
+# Ignore TensorFlow/Keras models weight files
 huk-data/weights_final.h5
 huk-data/*.csv
-huk-data/config/pretrained-roberta-base.h5d.h5
+huk-data/config/pretrained-roberta-base.h5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
