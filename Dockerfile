@@ -1,10 +1,10 @@
-# Base Image
-FROM python:3.8-slim
+# Use ARM-compatible TensorFlow Docker image for Apple Silicon
+FROM tensorflow/tensorflow:2.7.0
 
-# Set Working Directory
+# Set a working directory
 WORKDIR /app
 
-# Copy requirements
+# Copy the requirements file
 COPY requirements.txt .
 
 # Install dependencies
@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the project files
 COPY . .
 
-# Expose the port
+# Expose the FastAPI port
 EXPOSE 8000
 
-# Run the API with Uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Command to run the FastAPI app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
