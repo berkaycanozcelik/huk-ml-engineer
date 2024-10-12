@@ -9,13 +9,12 @@ def test_root():
     assert response.status_code == 200
     assert response.json() == {"message": "Hello HUK"}
 
-#TODO: Work In Process
-#First need to finish the /predict EP
+
+# TODO: Work In Process
+# First need to finish the /predict EP
 def test_predict():
     # Sample input data for the /predict/ endpoint
-    sample_input = {
-        "text": "I love this product, it’s fantastic!"
-    }
+    sample_input = {"text": "I love this product, it’s fantastic!"}
 
     # Sending a POST request to the /predict/ endpoint
     response = client.post("/predict/", json=sample_input)

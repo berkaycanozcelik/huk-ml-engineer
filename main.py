@@ -11,6 +11,7 @@ model = SentimentModel("huk-data/model.h5", "huk-data/weights_final.h5")
 async def root():
     return {"message": "Hello HUK"}
 
+
 # Refer to LATENCY_IMPROVEMENTS.md for strategies to enhance latency
 @app.post("/predict/", response_model=dict)
 def get_prediction(data: InputData) -> dict:
