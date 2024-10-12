@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from models.model import SentimentModel, InputData
+import time
 
 app = FastAPI()
 
-model = SentimentModel("huk-data/models.h5", "huk-data/weights_final.h5")
+model = SentimentModel("huk-data/model.h5", "huk-data/weights_final.h5")
 
 
 @app.get("/")
@@ -22,5 +23,7 @@ def get_prediction(data: InputData) -> dict:
     Returns:
         dict: A dictionary containing the prediction result.
     """
+    start_time = time.time()
     prediction = model.predict(data.text)
-    return {"prediction": prediction}
+    latency = time.time() - start_time
+    return {"prediction": prediction, "latency": latency}
