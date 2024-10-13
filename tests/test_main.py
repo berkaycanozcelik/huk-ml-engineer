@@ -9,8 +9,7 @@ def test_root():
     assert response.status_code == 200
     assert response.json() == {"message": "Hello HUK"}
 
-
-# TODO: Work In Process
+# TODO: Work In Progress
 # First need to finish the /predict EP
 def test_predict():
     # Sample input data for the /predict/ endpoint
