@@ -1,13 +1,10 @@
 import tensorflow as tf
 from pydantic import BaseModel
-from transformers import AutoTokenizer, TFAutoModelForSequenceClassification, \
-    RobertaConfig
-
+from transformers import AutoTokenizer, TFAutoModelForSequenceClassification, RobertaConfig
 
 class PredictionRequest(BaseModel):
     sentence: str
     sentiment: str
-
 
 class SentimentModel:
     def __init__(self, model_path: str, weights_path: str, config_path: str):
@@ -35,4 +32,4 @@ class SentimentModel:
         logits = outputs.logits
         predicted_class = tf.argmax(logits, axis=1).numpy()[0]
 
-        return predicted_class
+        return predicted_class, logits, inputs['input_ids']
