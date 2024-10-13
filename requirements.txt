@@ -5,3 +5,5 @@ anyio==3.5.0          # Compatible with FastAPI and uvicorn
 starlette==0.19.1     # Ensures compatibility with FastAPI and anyio
 pydantic==1.10.2      # Your data validation library
 pytest==7.4.2         # For running tests
+torch~=2.4.1
+transformers~=4.45.2
