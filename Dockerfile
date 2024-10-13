@@ -1,13 +1,13 @@
-# Use ARM-compatible TensorFlow Docker image for Apple Silicon
+# Used tensorflow base image
 FROM tensorflow/tensorflow:2.7.0
 
-# Set a working directory
+# Seting a working directory /app
 WORKDIR /app
 
-# Copy the requirements file
+# Copy the requirements file into working directory
 COPY requirements.txt .
 
-# Install dependencies
+# Install dependencies in Container
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the project files
