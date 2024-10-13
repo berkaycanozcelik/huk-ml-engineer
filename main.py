@@ -9,7 +9,11 @@ app = FastAPI()
 model_path = "roberta-base"
 weights_path = "./huk-data/weights_final.h5"
 config_path = "./huk-data/config/config-roberta-base.json"
-sentiment_model = SentimentModel(model_path, weights_path, config_path)
+vocab_path = "./huk-data/config/vocab-roberta-base.json"
+merges_path = "./huk-data/config/merges-roberta-base.txt"
+sentiment_model = SentimentModel(
+    model_path, weights_path, config_path, vocab_path, merges_path
+)
 
 # Define a mapping for sentiment labels to model output
 sentiment_map = {"neutral": 0, "positive": 1, "negative": 2}

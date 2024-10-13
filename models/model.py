@@ -7,9 +7,9 @@ class PredictionRequest(BaseModel):
     sentiment: str
 
 class SentimentModel:
-    def __init__(self, model_path: str, weights_path: str, config_path: str):
+    def __init__(self, model_path: str, weights_path: str, config_path: str, vocab_path: str, merges_path: str):
         # Loading the tokenizer
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path, vocab_file=vocab_path, merges_file=merges_path)
 
         # Loading model configuration
         self.config = RobertaConfig.from_pretrained(config_path)
