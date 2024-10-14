@@ -1,6 +1,6 @@
 # TensorFlow for the sentiment model (pre-installed with tensorflow/tensorflow:2.7.0 Docker image)
 fastapi==0.78.0
-uvicorn==0.17.0
+uvicorn==0.31.1
 anyio==3.5.0
 starlette==0.19.1     # Ensures compatibility with FastAPI and anyio
 pydantic==1.10.2
